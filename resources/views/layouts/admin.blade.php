@@ -19,17 +19,25 @@
 
 </head>
 <body>
-<div id="app">
+    <div class="wrapper ">
+        @include('layouts.inc.sidebar')
+        <div class="main-panel">
+            @include('layouts.inc.adminnav')
+            <div class="content">
+                @yield('content')
 
-    <main class="py-4">
-        @yield('content')
-    </main>
-</div>
+            </div>
+            @include('layouts.inc.adminfooter')
+
+        </div>
+    </div>
 
 <!-- Scripts -->
-<script src="{{ asset('assets/js/core/jquery.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/core/popper.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/core/bootstrap-material-design.min.js') }}" defer></script>
-<script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}" defer></script>
+<script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
+<script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
+<script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}" defer></script>
+<script src="{{ asset('admin/js/jquery.min.js') }}" defer></script>
+
+@yield('script')
 </body>
 </html>
