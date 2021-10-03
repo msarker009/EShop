@@ -22,7 +22,7 @@
                             <td>{{$item->name}}</td>
                             <td>{{$item->description}}</td>
                             <td>
-                                <img src="{{asset('/add_categoryImage/'.$item->image)}}" alt="image" class="cate_image">
+                                <img src="{{asset('add_categoryImage/'.$item->image)}}" alt="image" class="cate_image">
                             </td>
                             <td>
                                 <a href="{{url('edit-category/'.$item->id)}}" class="btn btn-primary">Edit</a>

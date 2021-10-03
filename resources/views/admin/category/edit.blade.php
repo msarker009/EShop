@@ -45,7 +45,7 @@
                             <div class="col-md-12  mb-3">
                                 <label for="">Image</label>
                                 <input type="file" class="form-control" name="image" >
-                                <img src="{{asset('/add_categoryImage/'.$category->image)}}" alt="image" class="img_size">
+                                <img src="{{asset('add_categoryImage/'.$category->image)}}" alt="image" class="img_size">
                             </div>
 
 
