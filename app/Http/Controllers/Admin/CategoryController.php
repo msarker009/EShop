@@ -52,7 +52,7 @@ class CategoryController extends Controller
         $category=Category::find($id);
         if($request->hasFile('image'))
         {
-            $path='/add_categoryImage/'.$category->image;
+            $path='add_categoryImage/'.$category->image;
             if(File::exists($path)){
                 File::delete($path);
             }
@@ -79,8 +79,8 @@ class CategoryController extends Controller
     {
         $category=Category::find($id);
         if($category->image) {
-            $path = '/add_categoryImage/' . $category->image;
-            if (File::exists($path)) {
+            $path = 'add_categoryImage/'.$category->image;
+            if(File::exists($path)) {
                 File::delete($path);
             }
         }

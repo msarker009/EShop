@@ -41,14 +41,13 @@
                             <label for="">Meta Description</label>
                             <textarea name="meta_description" id="" rows="3" class="form-control">{{$category->meta_description}}</textarea>
                         </div>
-                        <div>
-                            @if($category->image)
-                                <img src="{{asset('/add_categoryImage/'.$category->image)}}" alt="image" class="img_size">
-                            @endif
+
                             <div class="col-md-12  mb-3">
+                                <label for="">Image</label>
                                 <input type="file" class="form-control" name="image" >
+                                <img src="{{asset('/add_categoryImage/'.$category->image)}}" alt="image" class="img_size">
                             </div>
-                        </div>
+
 
                         <div class="col-md-12">
                             <button type="submit" class="btn btn-primary">Update</button>
