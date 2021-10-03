@@ -25,7 +25,7 @@
                                 <img src="{{asset('/add_categoryImage/'.$item->image)}}" alt="image" class="cate_image">
                             </td>
                             <td>
-                                <button class="btn btn-primary">Edit</button>
+                                <a href="{{url('edit-category/'.$item->id)}}" class="btn btn-primary">Edit</a>
                                 <button class="btn btn-danger">Delete</button>
                             </td>
                         </tr>
