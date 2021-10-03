@@ -33,10 +33,11 @@
     </div>
 
 <!-- Scripts -->
-<script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
-<script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
-<script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}" defer></script>
-<script src="{{ asset('admin/js/jquery.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/popper.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/bootstrap-material-design.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/perfect-scrollbar.jquery.min.js') }}" defer></script>
+    <script src="{{ asset('admin/js/jquery.min.js') }}" defer></script>
+    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}" defer></script>
 
 @yield('script')
 </body>

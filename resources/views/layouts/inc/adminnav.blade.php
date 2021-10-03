@@ -46,25 +46,19 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="material-icons">person</i>
-                        <p class="d-lg-none d-md-block">
-                            Account
-                        </p>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                        <a class="dropdown-item" href="#">Profile</a>
+                        <a class="dropdown-item" href="#">My Profile</a>
                         <a class="dropdown-item" href="#">Settings</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-
                     </div>
                 </li>
             </ul>
