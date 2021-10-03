@@ -5,7 +5,7 @@
         <div class="card-header">
             <hh4>Category Page</hh4>
             <div class="card-body">
-               <table class="table">
+               <table class="table table-bordered  table-striped">
                    <thead>
                         <tr>
                             <th>Id</th>
@@ -22,7 +22,7 @@
                             <td>{{$item->name}}</td>
                             <td>{{$item->description}}</td>
                             <td>
-                                <img src="{{asset('/add_categoryImage/'.$item->image)}}" alt="image" class="">
+                                <img src="{{asset('/add_categoryImage/'.$item->image)}}" alt="image" class="cate_image">
                             </td>
                             <td>
                                 <button class="btn btn-primary">Edit</button>
