@@ -27,6 +27,18 @@
                     <p>Add Category</p>
                 </a>
             </li>
+            <li class="nav-item {{Request::is('products') ? 'active':''}} ">
+                <a class="nav-link" href="{{url('products')}}">
+                    <i class="material-icons">category</i>
+                    <p>Products</p>
+                </a>
+            </li>
+            <li class="nav-item {{Request::is('add-product') ? 'active':''}}">
+                <a class="nav-link" href="{{url('add-product')}}">
+                    <i class="fas fa-list"></i>
+                    <p>Add Product</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
