@@ -5,8 +5,9 @@
         <div class="card-header">
             <h4>Edit& Update Product</h4>
             <div class="card-body">
-                <form action=" {{url('update-product')}}" method="POST" enctype="multipart/form-data">
+                <form action=" {{url('update-product/'.$product->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <select class="form-select">
