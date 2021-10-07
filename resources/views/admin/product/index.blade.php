@@ -9,8 +9,9 @@
                     <thead>
                     <tr>
                         <th>Id</th>
+                        <th>Category Name</th>
                         <th>Name</th>
-                        <th>Description</th>
+                        <th>selling Price</th>
                         <th>Image</th>
                         <th>Action</th>
                     </tr>
@@ -19,8 +20,9 @@
                     @foreach($product as $item)
                         <tr>
                             <td>{{$item->id}}</td>
+                            <td>{{$item->category->name}}</td>
                             <td>{{$item->name}}</td>
-                            <td>{{$item->small_description}}</td>
+                            <td>{{$item->selling_price}}</td>
                             <td>
                                 <img src="{{asset('add_productImage/'.$item->image)}}" alt="image" class="cate_image">
                             </td>
