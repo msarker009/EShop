@@ -38,7 +38,7 @@ class CategoryController extends Controller
         $category->meta_description=$request->input('meta_description');
         $category->meta_keywords=$request->input('meta_keywords');
         $category->save();
-        return redirect('/dashboard')->with('status','Category Added Successfully');
+        return redirect('/categories')->with('status','Category Added Successfully');
 
     }
     public function edit($id)

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class FrontendController extends Controller
+class FrontController extends Controller
 {
     public function index()
     {

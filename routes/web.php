@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\frontend\FrontendController;
+use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\frontend\FrontController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/front',[FrontendController::class,'index']);
+Route::get('/',[FrontController::class,'index']);
 
 Auth::routes();
 
