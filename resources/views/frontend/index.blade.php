@@ -25,6 +25,22 @@
                     @endforeach
                 </div>
             </div>
+            <div class="row">
+                <h2>Trending Category</h2>
+                <div class="owl-carousel featured-carousel owl-theme">
+                    @foreach($feature_category as $item)
+                        <div class="item">
+                            <div class="card">
+                                <img src="{{asset('add_categoryImage/'.$item->image)}}" alt="image">
+                                <div class="card-body">
+                                    <h5>{{$item->name}}</h5>
+                                    <p>{{$item->description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
-Route::get('/',[FrontController::class,'index']);
+});*/
+
 
 Auth::routes();
 
@@ -47,3 +47,6 @@ Route::middleware(['auth','isAdmin'])->group(function (){
     Route::get('/delete-product/{id}',[ProductController::class,'destroy']);
     /* products route start*/
 });
+//frontend route
+Route::get('/',[FrontController::class,'index']);
+Route::get('/category',[FrontController::class,'category']);
