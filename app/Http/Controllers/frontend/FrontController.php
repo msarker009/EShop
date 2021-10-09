@@ -21,4 +21,18 @@ class FrontController extends Controller
         return view('frontend.category',compact('category'));
 
     }
+    public function ViewCategory($slug)
+    {
+        if(Category::where('slug',$slug)->exists())
+        {
+            $category=Category::where('slug',$slug)->first();
+            $product=Product::where('category_id',$category->id)->where('status','0')->get();
+            return view('frontend.products.index',compact('category','product'));
+
+        }
+        else
+        {
+            return redirect('/')->with('status','Slug does not found');
+        }
+    }
 }

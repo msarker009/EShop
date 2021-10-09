@@ -28,15 +28,17 @@
             <div class="row">
                 <h2>Trending Category</h2>
                 <div class="owl-carousel featured-carousel owl-theme">
-                    @foreach($feature_category as $item)
+                    @foreach($feature_category as $category)
                         <div class="item">
-                            <div class="card">
-                                <img src="{{asset('add_categoryImage/'.$item->image)}}" alt="image">
-                                <div class="card-body">
-                                    <h5>{{$item->name}}</h5>
-                                    <p>{{$item->description}}</p>
+                            <a href="{{url('view-category/'.$category->slug)}}">
+                                <div class="card">
+                                    <img src="{{asset('add_categoryImage/'.$category->image)}}" alt="image">
+                                    <div class="card-body">
+                                        <h5>{{$category->name}}</h5>
+                                        <p>{{$category->description}}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

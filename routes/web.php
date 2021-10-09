@@ -50,3 +50,4 @@ Route::middleware(['auth','isAdmin'])->group(function (){
 //frontend route
 Route::get('/',[FrontController::class,'index']);
 Route::get('/category',[FrontController::class,'category']);
+Route::get('/view-category/{slug}',[FrontController::class,'ViewCategory']);

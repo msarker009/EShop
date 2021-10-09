@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title')
-    Welcome to Category
+    Category
 @endsection
 @section('content')
     <div class="py-5">
@@ -12,13 +12,15 @@
                     <div class="row">
                         @foreach($category as $item)
                             <div class="col-md-3 mb-3">
-                                <div class="card">
-                                    <img src="{{asset('add_categoryImage/'.$item->image)}}" alt="image">
-                                    <div class="card-body">
-                                        <h5>{{$item->name}}</h5>
-                                        <p>{{$item->description}}</p>
+                                <a href="{{url('view-category/'.$item->slug)}}">
+                                    <div class="card">
+                                        <img src="{{asset('add_categoryImage/'.$item->image)}}" alt="image">
+                                        <div class="card-body">
+                                            <h5>{{$item->name}}</h5>
+                                            <p>{{$item->description}}</p>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         @endforeach
                     </div>
