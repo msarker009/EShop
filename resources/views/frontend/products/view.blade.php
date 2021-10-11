@@ -39,10 +39,10 @@
                         <div class="row mt-2">
                             <div class="col-md-2">
                                 <label for="Quantity">Quantity</label>
-                                <div class="input-group text-center mb-3">
-                                    <span class="input-group-text">-</span>
-                                    <input type="text" name="quantity" value="1" class="form-control">
-                                    <span class="input-group-text">+</span>
+                                <div class="input-group text-center mb-3" style="width: 120px">
+                                    <button class="input-group-text decrement-btn">-</button>
+                                    <input type="text" name="quantity" value="1" class="form-control quantity_input">
+                                    <button class="input-group-text increment-btn">+</button>
                                 </div>
                             </div>
                             <div class="col-md-10">
@@ -57,4 +57,35 @@
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $(document).ready(function (){
+            $('.increment-btn').click(function (e){
+                e.preventDefault();
+                let inc_value=$('.quantity_input').val();
+                let value=parseInt(inc_value,10);
+                value=isNaN(value) ? 0 : value;
+                if(value < 10)
+                {
+                    value++;
+                    $('.quantity_input').val(value);
+
+                }
+            });
+            $('.decrement-btn').click(function (e){
+                e.preventDefault();
+                let dec_value=$('.quantity_input').val();
+                let value=parseInt(dec_value,10);
+                value=isNaN(value) ? 0 : value;
+                if(value > 1)
+                {
+                    value--;
+                    $('.quantity_input').val(value);
+
+                }
+            });
+
+        });
+    </script>
 @endsection
