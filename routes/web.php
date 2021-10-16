@@ -56,7 +56,8 @@ Route::get('/view-category/{cate_slug}/{prod_slug}',[FrontController::class,'Vie
 
 //add to cart
 Route::post('/add-to-cart',[CartController::class,'addProduct'])->name('add.cart');
+Route::post('/delete-cart-item',[CartController::class,'deleteProduct'])->name('delete.cart');
 
 Route::middleware(['auth'])->group(function (){
-
+    Route::get('/view-cart',[CartController::class,'ViewCart']);
 });
