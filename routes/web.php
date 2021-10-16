@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\frontend\CartController;
 use App\Http\Controllers\frontend\FrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -52,3 +53,10 @@ Route::get('/',[FrontController::class,'index']);
 Route::get('/category',[FrontController::class,'category']);
 Route::get('/view-category/{slug}',[FrontController::class,'ViewCategory']);
 Route::get('/view-category/{cate_slug}/{prod_slug}',[FrontController::class,'ViewProduct']);
+
+//add to cart
+Route::post('/add-to-cart',[CartController::class,'addProduct'])->name('add.cart');
+
+Route::middleware(['auth'])->group(function (){
+
+});

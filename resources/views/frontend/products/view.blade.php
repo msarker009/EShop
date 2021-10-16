@@ -91,8 +91,22 @@
                 e.preventDefault();
                 let product_id=$(this).closest('.product_data').find('.product_id').val();
                 let product_quantity=$(this).closest('.product_data').find('.quantity_input').val();
-                //alert(product_id);
-                //alert(product_quantity);
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url:'{{route("add.cart")}}',
+                   method:"post",
+                   data:{
+                       'product_id':product_id,
+                       'product_quantity':product_quantity,
+                   },
+                   success:function (response){
+                        swal(response.status);
+                   }
+                });
             });
 
         });
