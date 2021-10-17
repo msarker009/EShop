@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\frontend\CartController;
+use App\Http\Controllers\frontend\CheckoutController;
 use App\Http\Controllers\frontend\FrontController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,4 +62,5 @@ Route::put('/update-cart',[CartController::class,'updateProduct'])->name('update
 
 Route::middleware(['auth'])->group(function (){
     Route::get('/view-cart',[CartController::class,'ViewCart']);
+    Route::get('/checkout',[CheckoutController::class,'index']);
 });

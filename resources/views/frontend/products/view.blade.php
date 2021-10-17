@@ -37,7 +37,7 @@
                         <hr>
                         @if($product->quantity > 0 )
                             <label class="badge bg-success">In Stock</label>
-                        @elseif($product->quantity < 0)
+                        @else
                             <label class="badge bg-danger">Out of Stock</label>
                         @endif
                         <div class="row mt-2">
@@ -52,7 +52,9 @@
                             </div>
                             <div class="col-md-10">
                                 <br/>
-                                <button type="button" class="btn btn-primary me-3 float-start addToCartBtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                                @if($product->quantity > 0 )
+                                    <button type="button" class="btn btn-primary me-3 float-start addToCartBtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                                @endif
                                 <button type="button" class="btn btn-success me-3 float-start">Add to Wishlist <i class="fa fa-heart"></i> </button>
                             </div>
                         </div>
